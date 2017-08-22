@@ -1,0 +1,2 @@
+class SpaceshipJobsController < ApplicationController
+end
