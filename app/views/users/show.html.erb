@@ -1,0 +1,10 @@
+<h1>Hello <%=@User.name%></h1>
+
+
+
+
+<li>
+  <%= link_to "Change your password", edit_user_registration_path %>
+
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+</li>
