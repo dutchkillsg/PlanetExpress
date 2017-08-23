@@ -7,14 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag  'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
 
-    
-   
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js' %>
     <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %>
   </head>
 
   <body>
+
 	  <nav class="navbar navbar-default navbar-inverse" role="navigation">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,7 +26,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Login dropdown</a>
+		      <img class= "rocket" src="<%= asset_path( 'rocket.png' ) %>" />
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,6 +98,7 @@
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
+
     <%= yield %>
   </body>
 </html>

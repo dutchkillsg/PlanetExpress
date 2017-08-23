@@ -6,3 +6,5 @@ class User < ApplicationRecord
 	has_one :profile
 	has_many :spaceships, through: :profile
 end
+
+
