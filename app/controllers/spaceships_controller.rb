@@ -35,10 +35,11 @@ class SpaceshipsController < ApplicationController
   end
 
   def create
-    @User = current_user
+    @User = current_user.id
+    @current_user = current_user
     @Spaceships = Spaceship.create(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location], user_id: @User)
     @Spaceships.save
-    redirect_to @User
+    redirect_to @current_user
   end
 
 end

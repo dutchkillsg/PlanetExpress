@@ -1,0 +1,9 @@
+<%=form_for SpaceshipJob.new do |f| %>
+<% @spaceship = Spaceship.where(user_id: current_user) %>
+  <p><%= f.label :'Choose a Spaceship' %></p>
+  <p><%= collection_select(:spaceshipjob, :spaceship_id, @spaceship, :id, :name, :prompt =>true)%></p>
+
+  <p><%= f.label :'Then Pick a Job' %></p>
+  <p><%= collection_select(:spaceshipjob, :job_id, Job.all, :id, :description, :prompt =>true)%> </p>
+  <p><%=f.submit%></p>
+<%end%>
