@@ -16,6 +16,8 @@ class SpaceshipsController < ApplicationController
 
   def show
     @Spaceships = Spaceship.find(params[:id])
+    user_id = Spaceship.select(:user_id).find(params[:id])
+    @User = @Spaceships.user
   end
 
   def destroy
