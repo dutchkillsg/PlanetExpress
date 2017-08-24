@@ -1,0 +1,24 @@
+
+
+<h1>New Spaceship</h1>
+
+<%= form_for :spaceship, url: spaceships_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :capacity %><br>
+    <%= f.text_area :capacity %>
+  </p>
+
+    <p>
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
