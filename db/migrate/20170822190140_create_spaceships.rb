@@ -4,6 +4,7 @@ class CreateSpaceships < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :capacity
       t.string :location
+      t.belongs_to :user
       t.timestamps
     end
   end

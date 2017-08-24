@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-	after_action :create_profile, only: [:create]
-
 	def index
 		@Users = User.all
 	end
@@ -22,12 +20,10 @@ class UsersController < ApplicationController
 	# 	@users.destroy
 	# 	redirect_to 'index'
 	# end
-	
-	private
+	def show
+		@User = User.find(params[:id])
 
-	def create_profile
-		puts params
-		puts "Hello"
 	end
+
 
 end

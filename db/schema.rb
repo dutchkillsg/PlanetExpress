@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 20170822191250) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "fleet"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
   create_table "spaceship_jobs", force: :cascade do |t|
     t.integer "spaceship_id"
     t.integer "job_id"
@@ -44,12 +35,15 @@ ActiveRecord::Schema.define(version: 20170822191250) do
     t.string "name"
     t.integer "capacity"
     t.string "location"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_spaceships_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "name"
+    t.string "fleet"
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
