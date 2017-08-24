@@ -1,0 +1,32 @@
+<h1>Edit an Existing Job</h1>
+
+<%= form_for @Jobs do |f| %>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label :origin %><br>
+    <%= f.text_area :origin %>
+  </p>
+
+    <p>
+    <%= f.label :destination %><br>
+    <%= f.text_area :destination %>
+  </p>
+
+      <p>
+    <%= f.label :cost %><br>
+    <%= f.text_area :cost %>
+  </p>
+
+      <p>
+    <%= f.label :containers_needed %><br>
+    <%= f.text_area :containers_needed %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
