@@ -13,8 +13,12 @@
 
 <h1><%=@User.fleet%></h1>
 
-<div> 
+<div>
   <% @User.spaceships.each do |t| %>
-      <p><%= t.name %></>
+      <p><%= t.name %></p>
+      <a href = '/spaceships/<%= t.id %>/edit'>Edit</a>
+        <%= link_to 'Delete',  t,  method: :delete %>
   <% end %>
 </div>
+
+  <%= link_to('Create Spaceship', new_spaceship_path, method: :get ) %>

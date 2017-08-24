@@ -9,9 +9,12 @@ class SpaceshipsController < ApplicationController
   end
 
   def update
+    @User = current_user.id
+    @current_user = current_user
     @Spaceships = Spaceship.find(params[:id])
-    @Spaceships.update_attributes(name: params[:Spaceships][:name], capacity: params[:Spaceships][:capacity], location: params[:Spaceships][:location])
-    redirect_to 'show'
+    @Spaceships.update_attributes(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location], user_id: @User )
+    @Spaceships.save
+    redirect_to @current_user
   end
 
   def show
@@ -21,9 +24,10 @@ class SpaceshipsController < ApplicationController
   end
 
   def destroy
+    @current_user = current_user
     @Spaceships = Spaceship.find(params[:id])
     @Spaceships.destroy
-    redirect_to 'index'
+    redirect_to @current_user
   end
 
   def new
@@ -31,9 +35,10 @@ class SpaceshipsController < ApplicationController
   end
 
   def create
-    @User = User.find(params[:id])
-    @Spaceships = Spaceship.new(name: params[:Spaceships][:name], capacity: params[:Spaceships][:capacity], location: params[:Spaceships][:location], user_id: @User.id)
+    @User = current_user
+    @Spaceships = Spaceship.create(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location], user_id: @User)
     @Spaceships.save
+    redirect_to @User
   end
 
 end
