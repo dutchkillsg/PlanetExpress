@@ -4,14 +4,16 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @Jobs = Jobs.find(params[:id])
+    @Jobs = Job.find(params[:id])
     puts @Jobs.inspect
   end
 
   def update
+
     @Jobs = Job.find(params[:id])
-    @Jobs.update_attributes(description: params[:Job][:description], origin: params[:Job][:origin], destination: params[:Job][:destination], cost: params[:Job][:cost], containers_needed: params[:Job][:containers_needed])
-    redirect_to 'show'
+    @Jobs.update_attributes(description: params[:job][:description], origin: params[:job][:origin], destination: params[:job][:destination], cost: params[:job][:cost], containers_needed: params[:job][:containers_needed])
+    @Jobs.save
+    redirect_to '/jobs'
   end
 
   def show
@@ -21,7 +23,7 @@ class JobsController < ApplicationController
   def destroy
     @Jobs = Job.find(params[:id])
     @Jobs.destroy
-    redirect_to 'index'
+    redirect_to '/jobs'
   end
 
   def new
@@ -29,8 +31,9 @@ class JobsController < ApplicationController
   end
 
   def create
-    @Jobs = Job.create(description: params[:Job][:description], origin: params[:Job][:origin], destination: params[:Job][:destination], cost: params[:Job][:cost], containers_needed: params[:Job][:containers_needed])
+    @Jobs = Job.create(description: params[:job][:description], origin: params[:job][:origin], destination: params[:job][:destination], cost: params[:job][:cost], containers_needed: params[:job][:containers_needed])
     @Jobs.save
+    redirect_to '/jobs'
   end
 
 end

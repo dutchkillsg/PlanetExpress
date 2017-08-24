@@ -3,5 +3,8 @@
 <ul> 
   <% @Jobs.each do |t| %>
       <li><%= t.description %></li>
+      <a href = '/jobs/<%= t.id %>/edit'>Edit</a>
+        <%= link_to 'Delete',  t,  method: :delete %>
   <% end %>
 </ul>
+
