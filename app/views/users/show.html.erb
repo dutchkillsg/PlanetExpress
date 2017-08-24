@@ -8,3 +8,12 @@
 
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
 </li>
+
+
+<h1><%=@User.fleet%></h1>
+
+<div> 
+  <% @User.spaceships.each do |t| %>
+      <p><%= t.name %></>
+  <% end %>
+</div>

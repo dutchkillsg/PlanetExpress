@@ -29,7 +29,8 @@ class SpaceshipsController < ApplicationController
   end
 
   def create
-    @Spaceships = Spaceship.create(name: params[:Spaceships][:name], capacity: params[:Spaceships][:capacity], location: params[:Spaceships][:location])
+    @User = User.find(params[:id])
+    @Spaceships = Spaceship.new(name: params[:Spaceships][:name], capacity: params[:Spaceships][:capacity], location: params[:Spaceships][:location], user_id: @User.id)
     @Spaceships.save
   end
 
