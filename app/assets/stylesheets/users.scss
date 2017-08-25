@@ -1,16 +1,31 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+body, html{
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
+}
 #usrname{
   text-align: left;
 }
 
 #fleet{
+  text-align: left;
+
+}
+#fleetlist{
   text-align: center;
+  border: 1px solid black;
+  box-shadow: 10px;
+  position: absolute;
+    overflow-y: scroll;
+  height: 100%;
+  left: 50px;
 }
 .userlist {
   display:inline;
+
 }
 
 .logout {
@@ -18,5 +33,12 @@
 }
 
 .links{
-  text-decoration: none;
+  color: black;
+
+
+}
+
+.userlink{
+  float: right;
+
 }
