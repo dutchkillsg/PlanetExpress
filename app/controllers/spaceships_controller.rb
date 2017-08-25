@@ -31,6 +31,8 @@ class SpaceshipsController < ApplicationController
   def destroy
     @current_user = current_user
     @Spaceships = Spaceship.find(params[:id])
+    @SpaceshipJobs = SpaceshipJob.where({spaceship_id: @Spaceships.id})
+    @SoaceshipJobs.destroy_all
     @Spaceships.destroy
     redirect_to @current_user
   end
@@ -43,8 +45,12 @@ class SpaceshipsController < ApplicationController
     @User = current_user.id
     @current_user = current_user
     @Spaceships = Spaceship.create(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location], avatar: params[:spaceship][:avatar], user_id: @User)
-    @Spaceships.save
-    redirect_to @current_user
+    if @Spaceships.save
+          respond_to do |format|
+            format.html { redirect_to spaceship_path(@Spaceships) }
+            format.js
+          end
+    end
   end
 
 end
