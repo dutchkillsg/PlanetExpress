@@ -3,6 +3,7 @@ class Spaceship < ApplicationRecord
 	has_many :spaceship_jobs
 	belongs_to :user
 
-	validates :email, uniqueness: true
+	validates :name, uniqueness: true
+	mount_uploader :avatar, AvatarUploader
 
 end

@@ -1,8 +1,9 @@
 <div class 'container'>
     <h1 id = 'usrname'>Hello <%=@User.name%></h1>
-      <li>
-        <%= link_to "Change your password", edit_user_registration_path %>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <li class = "logout">
+
+        <%= link_to "Change your password |", edit_user_registration_path %>
+        <%= link_to('Logout |', destroy_user_session_path, method: :delete) %>
         <%= link_to('Spaceships', spaceships_path, method: :get) %>
       </li>
 
@@ -11,7 +12,8 @@
     <h1 id = 'fleet'><%=@User.fleet%></h1>
     <div class = 'col-sm-6'>
       <% @User.spaceships.each do |t| %>
-        <h3><%= t.name %></h3>
+        <a href = '/spaceships/<%=t.id%>show'><h3><%= t.name %></h3></a>
+        <img src="<%=t.avatar.thumb%>">
         <ul>
           <li class = 'userlist' ><a href = '/spaceships/<%= t.id %>/edit'>Edit</a></li>
           <li class = 'userlist' ><%= link_to 'Delete',  t,  method: :delete %></li>
@@ -26,4 +28,3 @@
 
     </div>
   </div>
-</div>

@@ -3,12 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #usrname{
-  text-align: center;
+  text-align: left;
 }
 
 #fleet{
-  text-align: left;
+  text-align: center;
 }
 .userlist {
   display:inline;
+}
+
+.logout {
+  list-style: none;
+}
+
+.links{
+  text-decoration: none;
 }

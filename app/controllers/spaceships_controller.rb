@@ -12,7 +12,7 @@ class SpaceshipsController < ApplicationController
     @User = current_user.id
     @current_user = current_user
     @Spaceships = Spaceship.find(params[:id])
-    @Spaceships.update_attributes(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location], user_id: @User )
+    @Spaceships.update_attributes(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location],avatar: params[:spaceship][:avatar], user_id: @User )
     @Spaceships.save
     redirect_to @current_user
   end
@@ -21,6 +21,11 @@ class SpaceshipsController < ApplicationController
     @Spaceships = Spaceship.find(params[:id])
     user_id = Spaceship.select(:user_id).find(params[:id])
     @User = @Spaceships.user
+
+    @Sships = Spaceship.all
+    @Jobs = Job.all
+    @SpaceshipJobs = SpaceshipJob.all
+
   end
 
   def destroy
@@ -37,7 +42,7 @@ class SpaceshipsController < ApplicationController
   def create
     @User = current_user.id
     @current_user = current_user
-    @Spaceships = Spaceship.create(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location], user_id: @User)
+    @Spaceships = Spaceship.create(name: params[:spaceship][:name], capacity: params[:spaceship][:capacity], location: params[:spaceship][:location], avatar: params[:spaceship][:avatar], user_id: @User)
     @Spaceships.save
     redirect_to @current_user
   end
