@@ -31,10 +31,10 @@ class SpaceshipJobsController < ApplicationController
 
     @spaceshipjob = SpaceshipJob.create(spaceship_id: params[:spaceshipjob][:spaceship_id], job_id: params[:spaceshipjob][:job_id])
     @spaceshipjob.save
-    redirect_to users_path
+
 #fix multuple being assigned to multiple
     if @spaceshipjob.save
-					redirect_to users_path
+					redirect_to current_user
 				else
 					flash[:notice]="Ship has already been added to this job."
 					render :new
