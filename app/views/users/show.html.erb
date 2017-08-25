@@ -1,30 +1,32 @@
 <div class 'container'>
     <h1 id = 'usrname'>Hello <%=@User.name%></h1>
       <li class = "logout">
-
-        <%= link_to "Change your password |", edit_user_registration_path %>
-        <%= link_to('Logout |', destroy_user_session_path, method: :delete) %>
-        <%= link_to('Spaceships', spaceships_path, method: :get) %>
+        <%= link_to "Change your password |", edit_user_registration_path, :class => 'links'%>
+        <%= link_to('Logout |', destroy_user_session_path, method: :delete, :class => 'links') %>
+        <%= link_to('Spaceships', spaceships_path, method: :get, :class => 'links') %>
       </li>
 
 
   <div class 'row'>
     <h1 id = 'fleet'><%=@User.fleet%></h1>
-    <div class = 'col-sm-6'>
+    <div class = 'col-sm-4' id= 'fleetlist'>
       <% @User.spaceships.each do |t| %>
-        <a href = '/spaceships/<%=t.id%>show'><h3><%= t.name %></h3></a>
-        <img src="<%=t.avatar.thumb%>">
-        <ul>
-          <li class = 'userlist' ><a href = '/spaceships/<%= t.id %>/edit'>Edit</a></li>
-          <li class = 'userlist' ><%= link_to 'Delete',  t,  method: :delete %></li>
+        <a class = 'links' href = '/spaceships/<%=t.id%>show'><h3><%= t.name %></h3></a>
+        <img src="<%=t.avatar.thumb%>" class = 'links avatarr'>
+        <ul >
+          <li class = 'userlist' ><a class = 'links' href = '/spaceships/<%= t.id %>/edit'>Edit</a></li>
+          <li class = 'userlist' ><%= link_to 'Delete',  t,  method: :delete, :class => 'links' %></li>
         </ul>
       <% end %>
     </div>
     </div>
+    <div class= 'col-sm-4'>
 
-    <div class = 'col-sm-6'>
-      <ul class = 'userlink'><h3><%= link_to('Create Spaceship', new_spaceship_path, method: :get ) %></h3></ul>
-      <ul class = 'userlink'><h3><%= link_to('Add a Job', new_spaceship_job_path, method: :get) %></h3></ul>
+    </div>
+
+    <div class = 'col-sm-4'>
+      <ul class = 'userlink'><h3><%= link_to('Create Spaceship', new_spaceship_path, method: :get, :class => 'links' ) %></h3></ul>
+      <ul class = 'userlink'><h3><%= link_to('Add a Job', new_spaceship_job_path, method: :get, :class => 'links') %></h3></ul>
 
     </div>
   </div>
