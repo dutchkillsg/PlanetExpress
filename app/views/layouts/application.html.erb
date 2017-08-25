@@ -6,12 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag  'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
-
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
 
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js' %>
     <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %>
+
   </head>
 
   <body>
@@ -58,5 +59,14 @@
 		</nav>
 
     <%= yield %>
+    <footer class="footer">
+  <div class="container">
+<ul class="social-icon animate pull-right">
+              <li><a href="#" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li> <!-- change the link to social page and edit title-->
+              <li><a href="#" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#" title="google plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+            </div>
+</footer>
   </body>
 </html>
