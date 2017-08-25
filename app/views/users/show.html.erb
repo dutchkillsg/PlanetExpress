@@ -1,29 +1,29 @@
-<h1>Hello <%=@User.name%></h1>
+<div class 'container'>
+    <h1 id = 'usrname'>Hello <%=@User.name%></h1>
+      <li>
+        <%= link_to "Change your password", edit_user_registration_path %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <%= link_to('Spaceships', spaceships_path, method: :get) %>
+      </li>
 
 
+  <div class 'row'>
+    <h1 id = 'fleet'><%=@User.fleet%></h1>
+    <div class = 'col-sm-6'>
+      <% @User.spaceships.each do |t| %>
+        <h3><%= t.name %></h3>
+        <ul>
+          <li class = 'userlist' ><a href = '/spaceships/<%= t.id %>/edit'>Edit</a></li>
+          <li class = 'userlist' ><%= link_to 'Delete',  t,  method: :delete %></li>
+        </ul>
+      <% end %>
+    </div>
+    </div>
 
+    <div class = 'col-sm-6'>
+      <ul class = 'userlink'><h3><%= link_to('Create Spaceship', new_spaceship_path, method: :get ) %></h3></ul>
+      <ul class = 'userlink'><h3><%= link_to('Add a Job', new_spaceship_job_path, method: :get) %></h3></ul>
 
-<li>
-  <%= link_to "Change your password", edit_user_registration_path %>
-
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <%= link_to('Spaceships', spaceships_path, method: :get) %>
-</li>
-
-
-<h1><%=@User.fleet%></h1>
-
-<div>
-  <% @User.spaceships.each do |t| %>
-      <p><%= t.name %></p>
-
-      <a href = '/spaceships/<%= t.id %>/edit'>Edit</a>
-        <%= link_to 'Delete',  t,  method: :delete %>
-  <% end %>
+    </div>
+  </div>
 </div>
-
-  <%= link_to('Create Spaceship', new_spaceship_path, method: :get ) %>
-  <p>
-    'or'
-  </p>
-  <%= link_to('Add a Job', new_spaceship_job_path, method: :get) %>

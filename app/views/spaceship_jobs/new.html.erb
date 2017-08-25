@@ -7,3 +7,4 @@
   <p><%= collection_select(:spaceshipjob, :job_id, Job.all, :id, :description, :prompt =>true)%> </p>
   <p><%=f.submit%></p>
 <%end%>
+<%= flash[:notice] %>

@@ -30,3 +30,7 @@ Job.create ({description: "ship ten cases of dark matter to the desert planet of
 Job.create ({description: "ship twenty cases of spice to the Terran Confederacy", origin: "Earth", destination: "Terran", cost: "2000", containers_needed: 20})
 Job.create ({description: "ship five cases of alien poop to mars for fuel", origin: "Earth", destination: "Mars", cost: "1000", containers_needed: 5})
 Job.create ({description: "200 cases of sarlacc spores to Uranus", origin: "Earth", destination: "Uranus", cost: "2500", containers_needed: "200"})
+Job.create ({description: "ship 1000 cases of dark matter to mars", origin: "Earth", destination: "Mars", cost: "5000", containers_needed: 1000})
+Job.create ({description: "ship 300 cases of Szechuan mcnugget sauce to the moon", origin: "Earth", destination: "Moon", cost: "2000", containers_needed: 300})
+Job.create ({description: "100 copies Top Gun to the native Angurans", origin: "Earth", destination: "Angura", cost: "1000", containers_needed: 100})
+Job.create ({description: "150 containers of Vodka because the Angurans like to party", origin: "Earth", destination: "Angura", cost: "2500", containers_needed: "150"})
