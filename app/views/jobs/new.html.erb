@@ -3,7 +3,7 @@
 <%= form_for :job, url: jobs_path do |f| %>
   <p>
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :minlength => 50%>
   </p>
  
   <p>
