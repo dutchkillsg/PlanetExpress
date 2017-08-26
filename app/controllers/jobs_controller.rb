@@ -22,6 +22,8 @@ class JobsController < ApplicationController
 
   def destroy
     @Jobs = Job.find(params[:id])
+    @SpaceshipJobs = SpaceshipJob.where({job_id: @Jobs.id})
+    @SpaceshipJobs.destroy_all
     @Jobs.destroy
     redirect_to '/jobs'
   end
