@@ -1,3 +1,20 @@
 // Place all the styles related to the spaceships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#newspaceship {
+  text-align: center;
+}
+
+.newspaceshipform {
+  text-align: center;
+
+}
+#newspaceshipimage{
+  margin: 0 auto;
+  padding-left: 100px;
+}
+
+.allspaceships{
+  text-align: center;
+  border: 1px solid black;
+}

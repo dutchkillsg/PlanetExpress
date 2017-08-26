@@ -1,10 +1,12 @@
-<h1>Here is a list of Jobs</h1>
-
-<ul> 
-  <% @Jobs.each do |t| %>
-      <li><%= t.description %></li>
-      <a href = '/jobs/<%= t.id %>/edit'>Edit</a>
-        <%= link_to 'Delete',  t,  method: :delete %>
-  <% end %>
-</ul>
-
+<h1 style = "text-align: center; padding-bottom: 50px;">Here is a list of Jobs</h1>
+<div class = 'container'>
+  <div class = 'row'>
+    <div class= 'col joblists'>
+      <% @Jobs.each do |t| %>
+      <h4><%= t.description %></h4>
+      <a class = 'links' href = '/jobs/<%= t.id %>/edit'>Edit</a>
+      <%= link_to 'Delete',  t,  method: :delete, :class => 'links'%>
+      <% end %>
+    </div>
+  </div>
+</div>

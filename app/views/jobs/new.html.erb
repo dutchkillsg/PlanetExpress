@@ -1,6 +1,7 @@
-<h1>Create a New Job</h1>
+<h1 style = 'text-align: center;'>Create a New Job</h1>
 
-<%= form_for :job, url: jobs_path do |f| %>
+<div class  = 'container createjob'>
+  <%= form_for :job, url: jobs_path do |f| %>
   <p>
     <%= f.label :description %><br>
     <%= f.text_field :description, :minlength => 50%>
@@ -11,17 +12,17 @@
     <%= f.text_area :origin %>
   </p>
 
-    <p>
+  <p>
     <%= f.label :destination %><br>
     <%= f.text_area :destination %>
   </p>
 
-      <p>
+  <p>
     <%= f.label :cost %><br>
     <%= f.text_area :cost %>
   </p>
 
-      <p>
+  <p>
     <%= f.label :containers_needed %><br>
     <%= f.text_area :containers_needed %>
   </p>
@@ -29,4 +30,5 @@
   <p>
     <%= f.submit %>
   </p>
-<% end %>
+  <% end %>
+</div>

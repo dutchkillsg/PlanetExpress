@@ -1,8 +1,9 @@
-<h1>These are all the Spaceships in the Universe!</h1>
+<h1 style = 'text-align:center;'>These are all the Spaceships in the Universe!</h1>
 
-
-<% @Spaceships.each do |t| %>
-  <li>
-    <%= t.name %>
-  </li>
-<%end%>
+<div class = 'container allspaceships'>
+  <% @Spaceships.each do |t| %>
+  <h3>
+    <a class = 'links' href = '/spaceships/<%= t.id %>show'><%= t.name %></a>
+  </h3>
+  <%end%>
+</div>

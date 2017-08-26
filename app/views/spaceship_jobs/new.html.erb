@@ -1,10 +1,13 @@
-<%=form_for SpaceshipJob.new do |f| %>
-<% @spaceship = Spaceship.where(user_id: current_user) %>
-  <p><%= f.label :'Choose a Spaceship' %></p>
-  <p><%= collection_select(:spaceshipjob, :spaceship_id, @spaceship, :id, :name, :prompt =>true)%></p>
+<h1 style = 'text-align:center;'>Add a Job to your Spaceship Here!</h1>
+<div class = 'container spaceshipjob'>
+  <%=form_for SpaceshipJob.new do |f| %>
+  <% @spaceship = Spaceship.where(user_id: current_user) %>
+    <p><%= f.label :'Choose a Spaceship' %></p>
+    <p><%= collection_select(:spaceshipjob, :spaceship_id, @spaceship, :id, :name, :prompt =>true)%></p>
 
-  <p><%= f.label :'Then Pick a Job' %></p>
-  <p><%= collection_select(:spaceshipjob, :job_id, Job.all, :id, :description, :prompt =>true)%> </p>
-  <p><%=f.submit%></p>
-<%end%>
-<%= flash[:notice] %>
+    <p><%= f.label :'Then Pick a Job' %></p>
+    <p><%= collection_select(:spaceshipjob, :job_id, Job.all, :id, :description, :prompt =>true)%> </p>
+    <p><%=f.submit%></p>
+  <%end%>
+  <%= flash[:notice] %>
+</div>

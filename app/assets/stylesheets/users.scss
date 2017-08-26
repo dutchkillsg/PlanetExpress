@@ -12,6 +12,7 @@ body, html{
 
 #fleet{
   text-align: left;
+  padding-left: 100px;
 
 }
 #fleetlist{
@@ -20,8 +21,8 @@ body, html{
   box-shadow: 10px;
   position: absolute;
     overflow-y: scroll;
-  height: 100%;
-  left: 50px;
+  height: 50%;
+  left: 100px;
 }
 .userlist {
   display:inline;
@@ -41,4 +42,18 @@ body, html{
 .userlink{
   float: right;
 
+}
+
+#createadd {
+  float:right;
+  padding-right: 250px;
+}
+
+.login {
+  text-align: center;
+  padding-top: 50px;
+}
+.signup{
+  text-align:center;
+  padding-top: 50px;
 }
