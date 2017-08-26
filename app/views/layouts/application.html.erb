@@ -13,6 +13,9 @@
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js' %>
     <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %>
 
+
+
+
   </head>
 
   <body>
@@ -28,6 +31,7 @@
 		        <span class="icon-bar"></span>
 		      </button>
 		      <img class= "rocket" src="<%= asset_path( 'rocket.png' ) %>" />
+
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,18 +46,10 @@
 		            <li><a href="/spaceships/new">Create a Spaceship</a></li>
 		            <li><a href="/spaceship_jobs/new">Add a Job</a></li>
 		            <li class="divider"></li>
-		            <li><a href="#">Separated link</a></li>
-		            <li class="divider"></li>
-		            <li><a href="#">One more separated link</a></li>
+		            <li><a href="/jobs/new">Post a New Job</a></li>
 		          </ul>
 		        </li>
 		      </ul>
-		      <form class="navbar-form navbar-left" role="search">
-		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search">
-		        </div>
-		        <button type="submit" class="btn btn-default">Submit</button>
-		      </form>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
